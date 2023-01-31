@@ -1,0 +1,17 @@
+n = int(input())
+array = list(map(int, input().split()))
+x = int(input())
+left = 0
+right = n
+
+while left < right:
+   mid = (left + right) // 2
+   if array[mid] < x:
+       left = mid + 1
+   elif array[mid] >= x:
+       if mid == 0 or array[mid - 1] < x:
+           print(mid)
+           break
+       right = mid
+else:
+   print(-1)
